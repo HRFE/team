@@ -1,0 +1,998 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0055)http://styleguide.baidu.com/style/css/index.html#CSS002 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+    <title>CSS编码规范</title>
+    
+    <link rel="stylesheet" href="./CSS编码规范_files/sphinxdoc.css" type="text/css">
+    <link rel="stylesheet" href="./CSS编码规范_files/pygments.css" type="text/css">
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="./CSS编码规范_files/jquery.js"></script>
+    <script type="text/javascript" src="./CSS编码规范_files/underscore.js"></script>
+    <script type="text/javascript" src="./CSS编码规范_files/doctools.js"></script>
+    <link rel="top" title="hello 1.0.1 documentation" href="http://styleguide.baidu.com/style/css/index.html">
+    <link rel="prev" title="Welcome to hello’s documentation!" href="http://styleguide.baidu.com/style/css/index.html"> 
+  </head>
+  <body>
+    
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+            <h1 style="text-align:center;">CSS编码规范<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#python-beta" title="永久链接至标题">¶</a></h1>
+
+              <div class="section" id="python" style="text-align:left; font-style:italic;">
+                <span style="
+                font-size: 15px;
+                font-weight: bold;
+            ">标准委员会(fe-styleguide@baidu.com):<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#python" title="永久链接至标题">¶</a></span>
+                <p>黄后锦(多模交互搜索部，主席) 董睿(复合搜索部) 樊中恺(文库阅读事业部-技术部) 冯威风(网页搜索部)  顾轶灵(品牌展示广告部 )   雷志兴(云平台部) 李林（LBS地图基础业务部 ） <br>漆昱恒(流程信息管理部) 宋雅儒(国际化产品部)  王杨(大数据部) 吴多益(社区基础技术部)  张立理(联盟前端技术部) </p>
+                <p>参与规则制定：冷冰(商业基础平台部) 李玉北(联盟研发部) 曲奎林(国际化产品研发中心) 沈彬(联盟前端技术部) 邢达(大数据部) 熊军(LBS团购研发部-C端) 俞天翔(商业基础平台部)</p>
+                <p>由于我厂现在很多前端代码都不是专业FE写的，所以对前端代码规范理解不深刻，很多RD对工具中编码规范问题检查结果不理解。
+                        <br>FE-CMC建议前端代码提交同学仔细阅读如下规范补充说明文档
+                        <br>https://github.com/ecomfe/fecs/wiki/HowToFix
+                        <br>https://github.com/ecomfe/fecs/wiki/FAQ
+                </p>
+              </div>
+              <div class="toctree-wrapper compound">
+                <table border="0" style="width:100%;margin-top:0;">
+                    <tbody><tr>
+                        <td valign="top">
+                            <ul>
+                                <li class="toctree-l1"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id1">1. 前言</a></li>
+                                <li class="toctree-l1"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id2">2. 代码风格</a><ul>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id3">2.1. 文件</a></li>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id4">2.2. 缩进</a></li>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/l#id5">2.3. 空格</a></li>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id6">2.4. 行长度</a></li>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id7">2.5. 选择器</a></li>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id8">2.6. 属性</a></li>
+                                </ul>
+                                </li>
+                                <li class="toctree-l1"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id9">3. 通用</a><ul>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id10">3.1. 选择器</a></li>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id11">3.2. 属性缩写</a></li>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id12">3.3. 属性书写顺序</a></li>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id13">3.4. 清除浮动</a></li>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#important">3.5. !important</a></li>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#z-index">3.6. z-index</a></li>
+                                </ul>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="toctree-l1"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id14">4. 值与单位</a><ul>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id15">4.1. 文本</a></li>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id16">4.2. 数值</a></li>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#url">4.3. url</a></li>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id17">4.4. 长度</a></li>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id18">4.5. 颜色</a></li>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#d">4.6. 2D 位置</a></li>
+                                </ul>
+                                </li>
+                                <li class="toctree-l1"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id19">5. 文本编排</a><ul>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id20">5.1. 字体族</a></li>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id22">5.2. 字号</a></li>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id23">5.3. 字体风格</a></li>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id24">5.4. 字重</a></li>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id27">5.5. 行高</a></li>
+                                </ul>
+                                </li>
+                                <li class="toctree-l1"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id28">6. 变换与动画</a></li>
+                                <li class="toctree-l1"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id30">7. 响应式</a></li>
+                                <li class="toctree-l1"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id31">8. 兼容性</a><ul>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#id32">8.1. 属性前缀</a></li>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#hack">8.2. Hack</a></li>
+                                <li class="toctree-l2"><a class="reference internal" href="http://styleguide.baidu.com/style/css/index.html#expression">8.3. Expression</a></li>
+                                </ul>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody></table>
+</div>
+
+  <div class="section" id="id1">
+<h1>1. 前言<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id1" title="Permalink to this headline">¶</a></h1>
+<p>CSS作为网页样式的描述语言，在百度一直有着广泛的应用。本文档的目标是使CSS代码风格保持一致，容易被理解和被维护。</p>
+<p>虽然本文档是针对CSS设计的，但是在使用各种CSS的预编译器(如less、sass、stylus等)时，适用的部分也应尽量遵循本文档的约定。</p>
+<p>任何问题或建议，欢迎跟我们讨论:  <a class="reference external" href="mailto:fe-styleguide%40baidu.com">fe-styleguide<span>@</span>baidu<span>.</span>com</a></p>
+</div>
+<div class="section" id="id2">
+<h1>2. 代码风格<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id3">
+<h2>2.1. 文件<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id3" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[建议]  <tt class="docutils literal"><span class="pre">CSS</span></tt> 文件使用无  <tt class="docutils literal"><span class="pre">BOM</span></tt> 的  <tt class="docutils literal"><span class="pre">UTF-8</span></tt> 编码。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div>UTF-8 编码具有更广泛的适应性。BOM 在使用程序或工具处理文件时可能造成不必要的干扰。</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h2>2.2. 缩进<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id4" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE002] 使用 <tt class="docutils literal"><span class="pre">4</span></tt> 个空格做为一个缩进层级，不允许使用 <tt class="docutils literal"><span class="pre">2</span></tt> 个空格 或 <tt class="docutils literal"><span class="pre">tab</span></tt> 字符。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="nc">.selector</span> <span class="p">{</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id5">
+<h2>2.3. 空格<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id5" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE003] <tt class="docutils literal"><span class="pre">选择器</span></tt> 与 <tt class="docutils literal"><span class="pre">{</span></tt> 之间必须包含空格。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="nc">.selector</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE004] <tt class="docutils literal"><span class="pre">属性名</span></tt> 与之后的 <tt class="docutils literal"><span class="pre">:</span></tt> 之间不允许包含空格， <tt class="docutils literal"><span class="pre">:</span></tt> 与 <tt class="docutils literal"><span class="pre">属性值</span></tt> 之间必须包含空格。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="nt">margin</span><span class="o">:</span> <span class="nt">0</span><span class="o">,</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE005] <tt class="docutils literal"><span class="pre">列表型属性值</span></tt> 书写在单行时，<tt class="docutils literal"><span class="pre">,</span></tt> 后必须跟一个空格。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="nt">font-family</span><span class="o">:</span> <span class="nt">Arial</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id6">
+<h2>2.4. 行长度<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id6" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE006] 每行不得超过 <tt class="docutils literal"><span class="pre">120</span></tt> 个字符，除非单行不可分割。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div>常见不可分割的场景为URL超长。</div></blockquote>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[建议] 对于超长的样式，在样式值的 <tt class="docutils literal"><span class="pre">空格</span></tt> 处或 <tt class="docutils literal"><span class="pre">,</span></tt> 后换行，建议按逻辑分组。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="c">/* 不同属性值按逻辑分组 */</span>
+<span class="nt">background</span><span class="o">:</span>
+    <span class="nt">transparent</span> <span class="nt">url</span><span class="o">(</span><span class="nt">aVeryVeryVeryLongUrlIsPlacedHere</span><span class="o">)</span>
+    <span class="nt">no-repeat</span> <span class="nt">0</span> <span class="nt">0</span><span class="o">;</span>
+
+<span class="c">/* 可重复多次的属性，每次重复一行 */</span>
+<span class="nt">background-image</span><span class="o">:</span>
+    <span class="nt">url</span><span class="o">(</span><span class="nt">aVeryVeryVeryLongUrlIsPlacedHere</span><span class="o">)</span>
+    <span class="nt">url</span><span class="o">(</span><span class="nt">anotherVeryVeryVeryLongUrlIsPlacedHere</span><span class="o">);</span>
+
+<span class="c">/* 类似函数的属性值可以根据函数调用的缩进进行 */</span>
+<span class="nt">background-image</span><span class="o">:</span> <span class="nt">-webkit-gradient</span><span class="o">(</span>
+    <span class="nt">linear</span><span class="o">,</span>
+    <span class="nt">left</span> <span class="nt">bottom</span><span class="o">,</span>
+    <span class="nt">left</span> <span class="nt">top</span><span class="o">,</span>
+    <span class="nt">color-stop</span><span class="o">(</span><span class="nt">0</span><span class="nc">.04</span><span class="o">,</span> <span class="nt">rgb</span><span class="o">(</span><span class="nt">88</span><span class="o">,</span><span class="nt">94</span><span class="o">,</span><span class="nt">124</span><span class="o">)),</span>
+    <span class="nt">color-stop</span><span class="o">(</span><span class="nt">0</span><span class="nc">.52</span><span class="o">,</span> <span class="nt">rgb</span><span class="o">(</span><span class="nt">115</span><span class="o">,</span><span class="nt">123</span><span class="o">,</span><span class="nt">162</span><span class="o">))</span>
+<span class="o">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id7">
+<h2>2.5. 选择器<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id7" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE008] 当一个 rule 包含多个 selector 时，每个选择器声明必须独占一行。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="nc">.post</span><span class="o">,</span>
+<span class="nc">.page</span><span class="o">,</span>
+<span class="nc">.comment</span> <span class="p">{</span>
+    <span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* bad */</span>
+<span class="nc">.post</span><span class="o">,</span> <span class="nc">.page</span><span class="o">,</span> <span class="nc">.comment</span> <span class="p">{</span>
+    <span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE009] <tt class="docutils literal"><span class="pre">&gt;</span></tt>、<tt class="docutils literal"><span class="pre">+</span></tt>、<tt class="docutils literal"><span class="pre">~</span></tt> 选择器的两边各保留一个空格。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="c">/* good */</span>
+<span class="nt">main</span> <span class="o">&gt;</span> <span class="nt">nav</span> <span class="p">{</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">label</span> <span class="o">+</span> <span class="nt">input</span> <span class="p">{</span>
+    <span class="k">margin-left</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">input</span><span class="nd">:checked</span> <span class="o">~</span> <span class="nt">button</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="o">:</span> <span class="m">#69C</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* bad */</span>
+<span class="nt">main</span><span class="o">&gt;</span><span class="nt">nav</span> <span class="p">{</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">label</span><span class="o">+</span><span class="nt">input</span> <span class="p">{</span>
+    <span class="k">margin-left</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">input</span><span class="nd">:checked</span><span class="o">~</span><span class="nt">button</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="o">:</span> <span class="m">#69C</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE010] 属性选择器中的值必须用双引号包围。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div>不允许使用单引号，不允许不使用引号。</div></blockquote>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="c">/* good */</span>
+<span class="nt">article</span><span class="o">[</span><span class="nt">character</span><span class="o">=</span><span class="s2">"juliet"</span><span class="o">]</span> <span class="p">{</span>
+    <span class="k">voice-family</span><span class="o">:</span> <span class="s2">"Vivien Leigh"</span><span class="o">,</span> <span class="n">victoria</span><span class="o">,</span> <span class="n">female</span>
+<span class="p">}</span>
+
+<span class="c">/* bad */</span>
+<span class="nt">article</span><span class="o">[</span><span class="nt">character</span><span class="o">=</span><span class="s1">'juliet'</span><span class="o">]</span> <span class="p">{</span>
+    <span class="k">voice-family</span><span class="o">:</span> <span class="s2">"Vivien Leigh"</span><span class="o">,</span> <span class="n">victoria</span><span class="o">,</span> <span class="n">female</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id8">
+<h2>2.6. 属性<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id8" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE011] 属性定义必须另起一行。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="nc">.selector</span> <span class="p">{</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* bad */</span>
+<span class="nc">.selector</span> <span class="p">{</span> <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span> <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE012] 属性定义后必须以分号结尾。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="c">/* good */</span>
+<span class="nc">.selector</span> <span class="p">{</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* bad */</span>
+<span class="nc">.selector</span> <span class="p">{</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id9">
+<h1>3. 通用<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id9" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id10">
+<h2>3.1. 选择器<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id10" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE013] 如无必要，不得为 <tt class="docutils literal"><span class="pre">id</span></tt>、<tt class="docutils literal"><span class="pre">class</span></tt> 选择器添加类型选择器进行限定。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div>在性能和维护性上，都有一定的影响。</div></blockquote>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="c">/* good */</span>
+<span class="nf">#error</span><span class="o">,</span>
+<span class="nc">.danger-message</span> <span class="p">{</span>
+    <span class="k">font</span><span class="o">-</span><span class="k">color</span><span class="o">:</span> <span class="m">#c00</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* bad */</span>
+<span class="nt">dialog</span><span class="nf">#error</span><span class="o">,</span>
+<span class="nt">p</span><span class="nc">.danger-message</span> <span class="p">{</span>
+    <span class="k">font</span><span class="o">-</span><span class="k">color</span><span class="o">:</span> <span class="m">#c00</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[建议] 选择器的嵌套层级应不大于 3 级，位置靠后的限定条件应尽可能精确。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="c">/* good */</span>
+<span class="nf">#username</span> <span class="nt">input</span> <span class="p">{}</span>
+<span class="nc">.comment</span> <span class="nc">.avatar</span> <span class="p">{}</span>
+
+<span class="c">/* bad */</span>
+<span class="nc">.page</span> <span class="nc">.header</span> <span class="nc">.login</span> <span class="nf">#username</span> <span class="nt">input</span> <span class="p">{}</span>
+<span class="nc">.comment</span> <span class="nt">div</span> <span class="o">*</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id11">
+<h2>3.2. 属性缩写<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id11" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[建议] 在可以使用缩写的情况下，尽量使用属性缩写。</p>
+<dl class="docutils">
+<dt><strong>示例</strong></dt>
+<dd><div class="first last highlight-css"><div class="highlight"><pre><span class="c">/* good */</span>
+<span class="nc">.post</span> <span class="p">{</span>
+    <span class="k">font</span><span class="o">:</span> <span class="m">12px</span><span class="o">/</span><span class="m">1</span><span class="o">.</span><span class="m">5</span> <span class="n">arial</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* bad */</span>
+<span class="nc">.post</span> <span class="p">{</span>
+    <span class="k">font-family</span><span class="o">:</span> <span class="n">arial</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">12px</span><span class="p">;</span>
+    <span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[建议] 使用 <tt class="docutils literal"><span class="pre">border</span></tt> / <tt class="docutils literal"><span class="pre">margin</span></tt> / <tt class="docutils literal"><span class="pre">padding</span></tt> 等缩写时，应注意隐含值对实际数值的影响，确实需要设置多个方向的值时才使用缩写。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div>border / margin / padding 等缩写会同时设置多个属性的值，容易覆盖不需要覆盖的设定。如某些方向需要继承其他声明的值，则应该分开设置。</div></blockquote>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="c">/* centering &lt;article class="page"&gt; horizontally and highlight featured ones */</span>
+<span class="nt">article</span> <span class="p">{</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#999</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* good */</span>
+<span class="nc">.page</span> <span class="p">{</span>
+    <span class="k">margin-right</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+    <span class="k">margin-left</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.featured</span> <span class="p">{</span>
+    <span class="k">border-color</span><span class="o">:</span> <span class="m">#69c</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* bad */</span>
+<span class="nc">.page</span> <span class="p">{</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">5px</span> <span class="k">auto</span><span class="p">;</span> <span class="c">/* introducing redundancy */</span>
+<span class="p">}</span>
+
+<span class="nc">.featured</span> <span class="p">{</span>
+    <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#69c</span><span class="p">;</span> <span class="c">/* introducing redundancy */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id12">
+<h2>3.3. 属性书写顺序<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id12" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[建议] 同一 rule set 下的属性在书写时，应按功能进行分组，并以 <strong>Formatting Model（布局方式、位置） &gt; Box Model（尺寸） &gt; Typographic（文本相关） &gt; Visual（视觉效果）</strong> 的顺序书写，以提高代码的可读性。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Formatting Model 相关属性包括：<tt class="docutils literal"><span class="pre">position</span></tt> / <tt class="docutils literal"><span class="pre">top</span></tt> / <tt class="docutils literal"><span class="pre">right</span></tt> / <tt class="docutils literal"><span class="pre">bottom</span></tt> / <tt class="docutils literal"><span class="pre">left</span></tt> / <tt class="docutils literal"><span class="pre">float</span></tt> / <tt class="docutils literal"><span class="pre">display</span></tt>/ <tt class="docutils literal"><span class="pre">overflow</span></tt> 等</li>
+<li>Box Model 相关属性包括：<tt class="docutils literal"><span class="pre">border</span></tt> / <tt class="docutils literal"><span class="pre">margin</span></tt> / <tt class="docutils literal"><span class="pre">padding</span></tt> / <tt class="docutils literal"><span class="pre">width</span></tt> / <tt class="docutils literal"><span class="pre">height</span></tt> 等</li>
+<li>Typographic 相关属性包括：<tt class="docutils literal"><span class="pre">font</span></tt> / <tt class="docutils literal"><span class="pre">line-height</span></tt> / <tt class="docutils literal"><span class="pre">text-align</span></tt> / <tt class="docutils literal"><span class="pre">word-wrap</span></tt> 等</li>
+<li>Visual 相关属性包括：<tt class="docutils literal"><span class="pre">background</span></tt> / <tt class="docutils literal"><span class="pre">color</span></tt> / <tt class="docutils literal"><span class="pre">transition</span></tt> / <tt class="docutils literal"><span class="pre">list-style</span></tt> 等</li>
+</ul>
+<p>另外，如果包含 <tt class="docutils literal"><span class="pre">content</span></tt> 属性，应放在最前面。</p>
+</div></blockquote>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="nc">.sidebar</span> <span class="p">{</span>
+    <span class="c">/* formatting model: positioning schemes / offsets / z-indexes / display / ...  */</span>
+    <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+    <span class="k">top</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span>
+    <span class="k">left</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="k">overflow-x</span><span class="o">:</span> <span class="k">hidden</span><span class="p">;</span>
+
+    <span class="c">/* box model: sizes / margins / paddings / borders / ...  */</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#ddd</span><span class="p">;</span>
+
+    <span class="c">/* typographic: font / aligns / text styles / ... */</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">14px</span><span class="p">;</span>
+    <span class="k">line-height</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
+
+    <span class="c">/* visual: colors / shadows / gradients / ... */</span>
+    <span class="k">background</span><span class="o">:</span> <span class="m">#f5f5f5</span><span class="p">;</span>
+    <span class="k">color</span><span class="o">:</span> <span class="m">#333</span><span class="p">;</span>
+    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transition</span><span class="o">:</span> <span class="k">color</span> <span class="m">1s</span><span class="p">;</span>
+       <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">transition</span><span class="o">:</span> <span class="k">color</span> <span class="m">1s</span><span class="p">;</span>
+            <span class="n">transition</span><span class="o">:</span> <span class="k">color</span> <span class="m">1s</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id13">
+<h2>3.4. 清除浮动<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id13" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[建议] 当元素需要撑起高度以包含内部的浮动元素时，通过对伪类设置 <tt class="docutils literal"><span class="pre">clear</span></tt> 或触发 <tt class="docutils literal"><span class="pre">BFC</span></tt> 的方式进行 <tt class="docutils literal"><span class="pre">clearfix</span></tt>。尽量不使用增加空标签的方式。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div><p>触发 BFC 的方式很多，常见的有：</p>
+<ul class="simple">
+<li>float 非 none</li>
+<li>position 非 static</li>
+<li>overflow 非 visible</li>
+</ul>
+<p>如希望使用更小副作用的清除浮动方法，参见 <a class="reference external" href="http://nicolasgallagher.com/micro-clearfix-hack/">A new micro clearfix hack</a> 一文。</p>
+<p>另需注意，对已经触发 BFC 的元素不需要再进行 clearfix。</p>
+</div></blockquote>
+</div>
+<div class="section" id="important">
+<h2>3.5. !important<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#important" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[建议] 尽量不使用 <tt class="docutils literal"><span class="pre">!important</span></tt> 声明。</p>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[建议] 当需要强制指定样式且不允许任何场景覆盖时，通过标签内联和 <tt class="docutils literal"><span class="pre">!important</span></tt> 定义样式。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div>必须注意的是，仅在设计上 <tt class="docutils literal"><span class="pre">确实不允许任何其它场景覆盖样式</span></tt> 时，才使用内联的 <tt class="docutils literal"><span class="pre">!important</span></tt> 样式。通常在第三方环境的应用中使用这种方案。下面的 z-index 章节是其中一个特殊场景的典型样例。</div></blockquote>
+</div>
+<div class="section" id="z-index">
+<h2>3.6. z-index<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#z-index" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[建议] 将 <tt class="docutils literal"><span class="pre">z-index</span></tt> 进行分层，对文档流外绝对定位元素的视觉层级关系进行管理。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div><p>同层的多个元素，如多个由用户输入触发的 Dialog，在该层级内使用相同的 <tt class="docutils literal"><span class="pre">z-index</span></tt> 或递增 <tt class="docutils literal"><span class="pre">z-index</span></tt>。</p>
+<p>建议每层包含100个 <tt class="docutils literal"><span class="pre">z-index</span></tt> 来容纳足够的元素，如果每层元素较多，可以调整这个数值。</p>
+</div></blockquote>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[建议] 在可控环境下，期望显示在最上层的元素，<tt class="docutils literal"><span class="pre">z-index</span></tt> 指定为 <tt class="docutils literal"><span class="pre">999999</span></tt>。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div><p>可控环境分成两种，一种是自身产品线环境；还有一种是可能会被其他产品线引用，但是不会被外部第三方的产品引用。</p>
+<p>不建议取值为 <tt class="docutils literal"><span class="pre">2147483647</span></tt>。以便于自身产品线被其他产品线引用时，当遇到层级覆盖冲突的情况，留出向上调整的空间。</p>
+</div></blockquote>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[建议] 在第三方环境下，期望显示在最上层的元素，通过标签内联和 <tt class="docutils literal"><span class="pre">!important</span></tt>，将 <tt class="docutils literal"><span class="pre">z-index</span></tt> 指定为 <tt class="docutils literal"><span class="pre">2147483647</span></tt>。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div>第三方环境对于开发者来说完全不可控。在第三方环境下的元素，为了保证元素不被其页面其他样式定义覆盖，需要采用此做法。</div></blockquote>
+</div>
+</div>
+<div class="section" id="id14">
+<h1>4. 值与单位<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id14" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id15">
+<h2>4.1. 文本<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id15" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE024] 文本内容必须用双引号包围。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div>文本类型的内容可能在选择器、属性值等内容中。</div></blockquote>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="c">/* good */</span>
+<span class="nt">html</span><span class="o">[</span><span class="nt">lang</span><span class="o">|=</span><span class="s2">"zh"</span><span class="o">]</span> <span class="nt">q</span><span class="nd">:before</span> <span class="p">{</span>
+    <span class="k">font-family</span><span class="o">:</span> <span class="s2">"Microsoft YaHei"</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+    <span class="k">content</span><span class="o">:</span> <span class="s2">"“"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">html</span><span class="o">[</span><span class="nt">lang</span><span class="o">|=</span><span class="s2">"zh"</span><span class="o">]</span> <span class="nt">q</span><span class="nd">:after</span> <span class="p">{</span>
+    <span class="k">font-family</span><span class="o">:</span> <span class="s2">"Microsoft YaHei"</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+    <span class="k">content</span><span class="o">:</span> <span class="s2">"”"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* bad */</span>
+<span class="nt">html</span><span class="o">[</span><span class="nt">lang</span><span class="o">|=</span><span class="nt">zh</span><span class="o">]</span> <span class="nt">q</span><span class="nd">:before</span> <span class="p">{</span>
+    <span class="k">font-family</span><span class="o">:</span> <span class="s1">'Microsoft YaHei'</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+    <span class="k">content</span><span class="o">:</span> <span class="s1">'“'</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">html</span><span class="o">[</span><span class="nt">lang</span><span class="o">|=</span><span class="nt">zh</span><span class="o">]</span> <span class="nt">q</span><span class="nd">:after</span> <span class="p">{</span>
+    <span class="k">font-family</span><span class="o">:</span> <span class="s2">"Microsoft YaHei"</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+    <span class="k">content</span><span class="o">:</span> <span class="s2">"”"</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id16">
+<h2>4.2. 数值<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id16" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE025] 当数值为 0 - 1 之间的小数时，省略整数部分的 0。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="c">/* good */</span>
+<span class="nt">panel</span> <span class="p">{</span>
+    <span class="k">opacity</span><span class="o">:</span> <span class="o">.</span><span class="m">8</span>
+<span class="p">}</span>
+
+<span class="c">/* bad */</span>
+<span class="nt">panel</span> <span class="p">{</span>
+    <span class="k">opacity</span><span class="o">:</span> <span class="m">0</span><span class="o">.</span><span class="m">8</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="url">
+<h2>4.3. url<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#url" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE026] <tt class="docutils literal"><span class="pre">url()</span></tt> 函数中的路径不加引号。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="nt">body</span> <span class="p">{</span>
+    <span class="k">background</span><span class="o">:</span> <span class="sx">url(bg.png)</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[建议] <tt class="docutils literal"><span class="pre">url()</span></tt> 函数中，如果绝对路径引用外部资源的 URL 协议部分与当前CSS相同，可省去协议部分。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre> <span class="nt">body</span> <span class="p">{</span>
+    <span class="k">background</span><span class="o">:</span> <span class="sx">url(//baidu.com/img/bg.png)</span> <span class="k">no-repeat</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id17">
+<h2>4.4. 长度<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id17" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE028] 长度为 <tt class="docutils literal"><span class="pre">0</span></tt> 时须省略单位。 (也只有长度单位可省)</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="c">/* good */</span>
+<span class="nt">body</span> <span class="p">{</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">0</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* bad */</span>
+<span class="nt">body</span> <span class="p">{</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">0px</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id18">
+<h2>4.5. 颜色<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id18" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE029] RGB颜色值必须使用十六进制记号形式 <tt class="docutils literal"><span class="pre">#rrggbb</span></tt>。不允许使用 <tt class="docutils literal"><span class="pre">rgb()</span></tt>。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div>带有alpha的颜色信息可以使用 <tt class="docutils literal"><span class="pre">rgba()</span></tt>。使用 <tt class="docutils literal"><span class="pre">rgba()</span></tt> 时每个逗号后必须保留一个空格。</div></blockquote>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="c">/* good */</span>
+<span class="nc">.success</span> <span class="p">{</span>
+    <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">2px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">128</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="o">.</span><span class="m">3</span><span class="p">);</span>
+    <span class="k">border-color</span><span class="o">:</span> <span class="m">#008000</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* bad */</span>
+<span class="nc">.success</span> <span class="p">{</span>
+    <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">2px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span><span class="m">128</span><span class="o">,</span><span class="m">0</span><span class="o">,.</span><span class="m">3</span><span class="p">);</span>
+    <span class="k">border-color</span><span class="o">:</span> <span class="k">rgb</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">128</span><span class="o">,</span> <span class="m">0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE030] 颜色值可以缩写时，必须使用缩写形式。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre> <span class="c">/* good */</span>
+<span class="nc">.success</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="o">:</span> <span class="m">#aca</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* bad */</span>
+<span class="nc">.success</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="o">:</span> <span class="m">#aaccaa</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE031] 颜色值不允许使用命名色值。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="c">/* good */</span>
+<span class="nc">.success</span> <span class="p">{</span>
+    <span class="k">color</span><span class="o">:</span> <span class="m">#90ee90</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* bad */</span>
+<span class="nc">.success</span> <span class="p">{</span>
+    <span class="k">color</span><span class="o">:</span> <span class="nb">lightgreen</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[建议] 颜色值中的英文字符采用小写。如不用小写也需要保证同一项目内保持大小写一致。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="c">/* good */</span>
+<span class="nc">.success</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="o">:</span> <span class="m">#aca</span><span class="p">;</span>
+    <span class="k">color</span><span class="o">:</span> <span class="m">#90ee90</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* good */</span>
+<span class="nc">.success</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="o">:</span> <span class="m">#ACA</span><span class="p">;</span>
+    <span class="k">color</span><span class="o">:</span> <span class="m">#90EE90</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* bad */</span>
+<span class="nc">.success</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="o">:</span> <span class="m">#ACA</span><span class="p">;</span>
+    <span class="k">color</span><span class="o">:</span> <span class="m">#90ee90</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="d">
+<h2>4.6. 2D 位置<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#d" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE033] 必须同时给出水平和垂直方向的位置。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div>2D 位置初始值为 <tt class="docutils literal"><span class="pre">0%</span> <span class="pre">0%</span></tt>，但在只有一个方向的值时，另一个方向的值会被解析为 center。为避免理解上的困扰，应同时给出两个方向的值。<a class="reference external" href="http://www.w3.org/TR/CSS21/colors.html#propdef-background-position/">background-position属性值的定义</a></div></blockquote>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="c">/* good */</span>
+<span class="nt">body</span> <span class="p">{</span>
+    <span class="k">background-position</span><span class="o">:</span> <span class="k">center</span> <span class="k">top</span><span class="p">;</span> <span class="c">/* 50% 0% */</span>
+<span class="p">}</span>
+
+<span class="c">/* bad */</span>
+<span class="nt">body</span> <span class="p">{</span>
+    <span class="k">background-position</span><span class="o">:</span> <span class="k">top</span><span class="p">;</span> <span class="c">/* 50% 0% */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id19">
+<h1>5. 文本编排<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id19" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id20">
+<h2>5.1. 字体族<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id20" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE034] <tt class="docutils literal"><span class="pre">font-family</span></tt> 属性中的字体族名称应使用字体的英文 <tt class="docutils literal"><span class="pre">Family</span> <span class="pre">Name</span></tt>，其中如有空格，须放置在引号中。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div><p>所谓英文 Family Name，为字体文件的一个元数据，常见名称如下：</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%">
+<col width="22%">
+<col width="44%">
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">字体</th>
+<th class="head">操作系统</th>
+<th class="head">Family Name</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>宋体 (中易宋体)</td>
+<td>Windows</td>
+<td>SimSun</td>
+</tr>
+<tr class="row-odd"><td>黑体 (中易黑体)</td>
+<td>Windows</td>
+<td>SimHei</td>
+</tr>
+<tr class="row-even"><td>微软雅黑</td>
+<td>Windows</td>
+<td>Microsoft YaHei</td>
+</tr>
+<tr class="row-odd"><td>微软正黑</td>
+<td>Windows</td>
+<td>Microsoft JhengHei</td>
+</tr>
+<tr class="row-even"><td>华文黑体</td>
+<td>Mac/iOS</td>
+<td>STHeiti</td>
+</tr>
+<tr class="row-odd"><td>冬青黑体</td>
+<td>Mac/iOS</td>
+<td>Hiragino Sans GB</td>
+</tr>
+<tr class="row-even"><td>文泉驿正黑</td>
+<td>Linux</td>
+<td>WenQuanYi Zen Hei</td>
+</tr>
+<tr class="row-odd"><td>文泉驿微米黑</td>
+<td>Linux</td>
+<td>WenQuanYi Micro Hei</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div></blockquote>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="nt">h1</span> <span class="p">{</span>
+    <span class="k">font-family</span><span class="o">:</span> <span class="s2">"Microsoft YaHei"</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE035] <tt class="docutils literal"><span class="pre">font-family</span></tt> 按「西文字体在前、中文字体在后」、「效果佳 (质量高/更能满足需求) 的字体在前、效果一般的字体在后」的顺序编写，最后必须指定一个通用字体族( <tt class="docutils literal"><span class="pre">serif</span></tt> / <tt class="docutils literal"><span class="pre">sans-serif</span></tt> )。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div>更详细说明可参考 <a class="reference external" href="http://www.zhihu.com/question/19911793/answer/13329819/">本文</a> 。</div></blockquote>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="c">/* Display according to platform */</span>
+<span class="nc">.article</span> <span class="p">{</span>
+    <span class="k">font-family</span><span class="o">:</span> <span class="n">Arial</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Specific for most platforms */</span>
+<span class="nt">h1</span> <span class="p">{</span>
+    <span class="k">font-family</span><span class="o">:</span> <span class="s2">"Helvetica Neue"</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="s2">"Hiragino Sans GB"</span><span class="o">,</span> <span class="s2">"WenQuanYi Micro Hei"</span><span class="o">,</span> <span class="s2">"Microsoft YaHei"</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE036] <tt class="docutils literal"><span class="pre">font-family</span></tt> 不区分大小写，但在同一个项目中，同样的 <tt class="docutils literal"><span class="pre">Family</span> <span class="pre">Name</span></tt> 大小写必须统一。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre> <span class="c">/* good */</span>
+<span class="nt">body</span> <span class="p">{</span>
+    <span class="k">font-family</span><span class="o">:</span> <span class="n">Arial</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">h1</span> <span class="p">{</span>
+    <span class="k">font-family</span><span class="o">:</span> <span class="n">Arial</span><span class="o">,</span> <span class="s2">"Microsoft YaHei"</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* bad */</span>
+<span class="nt">body</span> <span class="p">{</span>
+    <span class="k">font-family</span><span class="o">:</span> <span class="n">arial</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">h1</span> <span class="p">{</span>
+    <span class="k">font-family</span><span class="o">:</span> <span class="n">Arial</span><span class="o">,</span> <span class="s2">"Microsoft YaHei"</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id22">
+<h2>5.2. 字号<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id22" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE037] 需要在 Windows 平台显示的中文内容，其字号应不小于 <tt class="docutils literal"><span class="pre">12px</span></tt>。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div>由于 Windows 的字体渲染机制，小于 12px 的文字显示效果极差、难以辨认。</div></blockquote>
+</div>
+<div class="section" id="id23">
+<h2>5.3. 字体风格<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id23" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[建议] 需要在 Windows 平台显示的中文内容，不要使用除 <tt class="docutils literal"><span class="pre">normal</span></tt> 外的 <tt class="docutils literal"><span class="pre">font-style</span></tt>。其他平台也应慎用。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div>由于中文字体没有 italic 风格的实现，所有浏览器下都会 fallback 到 obilique 实现 (自动拟合为斜体)，小字号下 (特别是 Windows 下会在小字号下使用点阵字体的情况下) 显示效果差，造成阅读困难。</div></blockquote>
+</div>
+<div class="section" id="id24">
+<h2>5.4. 字重<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id24" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE039] <tt class="docutils literal"><span class="pre">font-weight</span></tt> 属性必须使用数值方式描述。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div><p>CSS 的字重分 100 – 900 共九档，但目前受字体本身质量和浏览器的限制，实际上支持 400 和 700 两档，分别等价于关键词 normal 和 bold。</p>
+<p>浏览器本身使用一系列 <a class="reference external" href="http://www.w3.org/TR/CSS21/fonts.html#propdef-font-weight">启发式规则</a> 来进行匹配，在 &lt;700 时一般匹配字体的 Regular 字重，&gt;=700 时匹配 Bold 字重。</p>
+<p>但已有浏览器开始支持 =600 时匹配 Semibold 字重 (见 <a class="reference external" href="http://justineo.github.io/slideshows/font/#/3/15">此表</a>)，故使用数值描述增加了灵活性，也更简短。</p>
+</div></blockquote>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre> <span class="c">/* good */</span>
+<span class="nt">h1</span> <span class="p">{</span>
+    <span class="k">font-weight</span><span class="o">:</span> <span class="m">700</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* bad */</span>
+<span class="nt">h1</span> <span class="p">{</span>
+    <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id27">
+<h2>5.5. 行高<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id27" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[建议] <tt class="docutils literal"><span class="pre">line-height</span></tt> 在定义文本段落时，应使用数值。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div><p>将 line-height 设置为数值，浏览器会基于当前元素设置的 font-size 进行再次计算。在不同字号的文本段落组合中，能达到较为舒适的行间间隔效果，避免在每个设置了 font-size 都需要设置 line-height。</p>
+<p>当 line-height 用于控制垂直居中时，还是应该设置成与容器高度一致。</p>
+</div></blockquote>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre> <span class="nc">.container</span> <span class="p">{</span>
+    <span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id28">
+<h1>6. 变换与动画<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id28" title="Permalink to this headline">¶</a></h1>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE041] 使用 <tt class="docutils literal"><span class="pre">transition</span></tt> 时应指定 <tt class="docutils literal"><span class="pre">transition-property</span></tt>。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre> <span class="c">/* good */</span>
+<span class="nc">.box</span> <span class="p">{</span>
+    <span class="n">transition</span><span class="o">:</span> <span class="k">color</span> <span class="m">1s</span><span class="o">,</span> <span class="k">border-color</span> <span class="m">1s</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* bad */</span>
+<span class="nc">.box</span> <span class="p">{</span>
+    <span class="n">transition</span><span class="o">:</span> <span class="n">all</span> <span class="m">1s</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[建议] 尽可能在浏览器能高效实现的属性上添加过渡和动画。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div><p>见 <a class="reference external" href="http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/">本文</a> ，在可能的情况下应选择这样四种变换：</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">transform:</span> <span class="pre">translate(npx,</span> <span class="pre">npx);</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">transform:</span> <span class="pre">scale(n);</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">transform:</span> <span class="pre">rotate(ndeg);</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">opacity:</span> <span class="pre">0..1;</span></tt></li>
+</ul>
+<p>典型的，可以使用 translate 来代替 left 作为动画属性。</p>
+</div></blockquote>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="c">/* good */</span>
+<span class="nc">.box</span> <span class="p">{</span>
+    <span class="n">transition</span><span class="o">:</span> <span class="n">transform</span> <span class="m">1s</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.box</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="n">transform</span><span class="o">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">20px</span><span class="p">);</span> <span class="c">/* move right for 20px */</span>
+<span class="p">}</span>
+
+<span class="c">/* bad */</span>
+<span class="nc">.box</span> <span class="p">{</span>
+    <span class="k">left</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="n">transition</span><span class="o">:</span> <span class="k">left</span> <span class="m">1s</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.box</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="k">left</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span> <span class="c">/* move right for 20px */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id30">
+<h1>7. 响应式<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id30" title="Permalink to this headline">¶</a></h1>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] <tt class="docutils literal"><span class="pre">Media</span> <span class="pre">Query</span></tt> 不得单独编排，必须与相关的规则一起定义。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="c">/* Good */</span>
+<span class="c">/* header styles */</span>
+<span class="k">@media</span> <span class="o">(...)</span> <span class="p">{</span>
+    <span class="c">/* header styles */</span>
+<span class="p">}</span>
+
+<span class="c">/* main styles */</span>
+<span class="k">@media</span> <span class="o">(...)</span> <span class="p">{</span>
+    <span class="c">/* main styles */</span>
+<span class="p">}</span>
+
+<span class="c">/* footer styles */</span>
+<span class="k">@media</span> <span class="o">(...)</span> <span class="p">{</span>
+    <span class="c">/* footer styles */</span>
+<span class="p">}</span>
+
+
+<span class="c">/* Bad */</span>
+<span class="c">/* header styles */</span>
+<span class="c">/* main styles */</span>
+<span class="c">/* footer styles */</span>
+
+<span class="k">@media</span> <span class="o">(...)</span> <span class="p">{</span>
+    <span class="c">/* header styles */</span>
+    <span class="c">/* main styles */</span>
+    <span class="c">/* footer styles */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE044] <tt class="docutils literal"><span class="pre">Media</span> <span class="pre">Query</span></tt> 如果有多个逗号分隔的条件时，应将每个条件放在单独一行中。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="k">@media</span>
+<span class="o">(</span><span class="nt">-webkit-min-device-pixel-ratio</span><span class="o">:</span> <span class="nt">2</span><span class="o">),</span> <span class="c">/* Webkit-based browsers */</span>
+<span class="o">(</span><span class="nt">min--moz-device-pixel-ratio</span><span class="o">:</span> <span class="nt">2</span><span class="o">),</span>    <span class="c">/* Older Firefox browsers (prior to Firefox 16) */</span>
+<span class="o">(</span><span class="nt">min-resolution</span><span class="o">:</span> <span class="nt">2dppx</span><span class="o">),</span>             <span class="c">/* The standard way */</span>
+<span class="o">(</span><span class="nt">min-resolution</span><span class="o">:</span> <span class="nt">192dpi</span><span class="o">)</span> <span class="p">{</span>           <span class="c">/* dppx fallback */</span>
+    <span class="c">/* Retina-specific stuff here */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[建议] 尽可能给出在高分辨率设备 (Retina) 下效果更佳的样式。</p>
+</div>
+<div class="section" id="id31">
+<h1>8. 兼容性<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id31" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id32">
+<h2>8.1. 属性前缀<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#id32" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE046] 带私有前缀的属性由长到短排列，按冒号位置对齐。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div>标准属性放在最后，按冒号对齐方便阅读，也便于在编辑器内进行多行编辑。</div></blockquote>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="nc">.box</span> <span class="p">{</span>
+    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+       <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+            <span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="hack">
+<h2>8.2. Hack<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#hack" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[建议] 需要添加 <tt class="docutils literal"><span class="pre">hack</span></tt> 时应尽可能考虑是否可以采用其他方式解决。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div>如果能通过合理的 HTML 结构或使用其他的 CSS 定义达到理想的样式，则不应该使用 hack 手段解决问题。通常 hack 会导致维护成本的增加。</div></blockquote>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[建议] 尽量使用 <tt class="docutils literal"><span class="pre">选择器</span> <span class="pre">hack</span></tt> 处理兼容性，而非 <tt class="docutils literal"><span class="pre">属性</span> <span class="pre">hack</span></tt>。</p>
+<p><strong>解释</strong></p>
+<blockquote>
+<div>尽量使用符合 CSS 语法的 selector hack，可以避免一些第三方库无法识别 hack 语法的问题。</div></blockquote>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="c">/* IE 7 */</span>
+<span class="o">*</span><span class="nd">:first-child</span> <span class="o">+</span> <span class="nt">html</span> <span class="nf">#header</span> <span class="p">{</span>
+    <span class="k">margin-top</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* IE 6 */</span>
+<span class="o">*</span> <span class="nt">html</span> <span class="nf">#header</span> <span class="p">{</span>
+    <span class="k">margin-top</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">4px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[建议] 尽量使用简单的 <tt class="docutils literal"><span class="pre">属性</span> <span class="pre">hack</span></tt>。</p>
+<p><strong>示例</strong></p>
+<blockquote>
+<div><div class="highlight-css"><div class="highlight"><pre><span class="nc">.box</span> <span class="p">{</span>
+    <span class="n">_display</span><span class="o">:</span> <span class="k">inline</span><span class="p">;</span> <span class="c">/* fix double margin */</span>
+    <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+    <span class="k">margin-left</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.container</span> <span class="p">{</span>
+    <span class="k">overflow</span><span class="o">:</span> <span class="k">hidden</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">zoom</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span> <span class="c">/* triggering hasLayout */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="expression">
+<h2>8.3. Expression<a class="headerlink" href="http://styleguide.baidu.com/style/css/index.html#expression" title="Permalink to this headline">¶</a></h2>
+<p><span style="font-size: 20px;font-weight: bold;">·</span>[强制] [RULE050] 禁止使用 <tt class="docutils literal"><span class="pre">Expression</span></tt>。</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+     
+    </div>
+  
+</body></html>
